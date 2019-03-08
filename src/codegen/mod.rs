@@ -54,6 +54,6 @@ pub mod async_await {
     where
         T: StdFuture,
     {
-        Ok(await!(future))
+        Ok(r#await!(future))
     }
 }

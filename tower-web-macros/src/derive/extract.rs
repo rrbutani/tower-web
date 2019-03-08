@@ -190,7 +190,7 @@ impl syn::fold::Fold for FoldShadowTy {
         use syn::punctuated::Punctuated;
         use std::mem;
 
-        macro_rules! try {
+        macro_rules! r#try {
             ($e:expr) => {{
                 match $e {
                     Ok(ret) => ret,
@@ -212,7 +212,7 @@ impl syn::fold::Fold for FoldShadowTy {
         for mut field in named {
             assert!(field.ident.is_some(), "unimplemented: named fields with no name");
 
-            let attrs = try!(Attribute::from_ast(&field.attrs));
+            let attrs = r#try!(Attribute::from_ast(&field.attrs));
 
             if attrs.is_empty() {
                 field.attrs.retain(is_serde_attr);
@@ -229,7 +229,7 @@ impl syn::fold::Fold for FoldShadowTy {
         use syn::punctuated::Punctuated;
         use std::mem;
 
-        macro_rules! try {
+        macro_rules! r#try {
             ($e:expr) => {{
                 match $e {
                     Ok(ret) => ret,
@@ -251,7 +251,7 @@ impl syn::fold::Fold for FoldShadowTy {
         for mut field in unnamed {
             assert!(field.ident.is_none(), "unimplemented: unnamed fields with name");
 
-            let attrs = try!(Attribute::from_ast(&field.attrs));
+            let attrs = r#try!(Attribute::from_ast(&field.attrs));
 
             if attrs.is_empty() {
                 field.attrs.retain(is_serde_attr);

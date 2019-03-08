@@ -221,7 +221,7 @@ mod test {
     use http;
     use std::time::Duration;
 
-    use middleware::cors::CorsBuilder;
+    use crate::middleware::cors::CorsBuilder;
 
     use self::InvalidRequest::*;
     use super::*;

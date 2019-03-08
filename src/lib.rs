@@ -512,9 +512,9 @@ pub mod view;
 
 mod run;
 
-pub use error::Error;
-pub use error::Builder as ErrorBuilder;
-pub use service::ServiceBuilder;
+pub use crate::error::Error;
+pub use crate::error::Builder as ErrorBuilder;
+pub use crate::service::ServiceBuilder;
 
 // ===== serde_derive re-export =====
 
